@@ -25,6 +25,16 @@ public class Vetor {
 
     }
 
+    public Integer buscarPorPosicao(int posicao) {
+
+        if (posicao >= 0 && posicao < this.tamanhoReal) {
+            return this.elementos[posicao];
+        } else {
+            throw new IllegalArgumentException("Erro: Índice inexistente.");
+        }
+
+    }
+
     public int getTamanhoReal() {
         return this.tamanhoReal;
     }
