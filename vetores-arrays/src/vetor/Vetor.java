@@ -35,6 +35,18 @@ public class Vetor {
 
     }
 
+    public int buscaPorElemento(int elemento) {
+
+        // Busca sequêncial
+        for (int i = 0; i < this.tamanhoReal; i++) {
+            if (this.elementos[i] == elemento) {
+                return i;
+            }
+        }
+        return -1; // Posição inexistente
+
+    }
+
     public int getTamanhoReal() {
         return this.tamanhoReal;
     }
