@@ -4,11 +4,11 @@ import base.EstruturaEstatica;
 
 public class Vetor2<T> extends EstruturaEstatica<T> {
 
-    public Vetor2(){
+    public Vetor2() {
         super();
     }
 
-    public Vetor2(int capacidade){
+    public Vetor2(int capacidade) {
         super(capacidade);
     }
 
@@ -18,6 +18,10 @@ public class Vetor2<T> extends EstruturaEstatica<T> {
 
     public void adicionarElementoEmPosicao(T elemento, int posicao) {
         super.adicionarElementoEmPosicao(elemento, posicao);
+    }
+
+    public void removerElementoPorPosicao(int posicao) {
+        super.removerElementoPorPosicao(posicao);
     }
 
 }

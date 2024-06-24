@@ -51,7 +51,7 @@ public class EstruturaEstatica<T> {
 
     }
 
-    public void removerElementoPorPosicao(int posicao) {
+    protected void removerElementoPorPosicao(int posicao) {
         if (!(posicao >= 0 && posicao < this.tamanhoReal)) {
             throw new IllegalArgumentException("Erro: Índice inexistente.");
         }
