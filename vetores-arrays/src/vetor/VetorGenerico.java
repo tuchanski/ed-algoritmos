@@ -1,7 +1,5 @@
 package vetor;
 
-import java.lang.reflect.Array;
-
 public class VetorGenerico<T> {
 
     private T[] elementos;
@@ -22,6 +20,16 @@ public class VetorGenerico<T> {
             this.elementos = elementosNovos;
         }
 
+    }
+
+    public Boolean contemElemento(T elemento) {
+
+        for (T elementoContido : this.elementos) {
+            if (elementoContido.equals(elemento)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void adicionarElemento(T elemento) throws Exception {
