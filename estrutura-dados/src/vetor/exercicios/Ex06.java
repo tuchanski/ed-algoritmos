@@ -3,7 +3,7 @@ package exercicios;
 import java.util.Scanner;
 
 import testes.Usuario;
-import vetor.VetorGenerico;
+import models.VetorGenerico;
 
 public class Ex06 {
 

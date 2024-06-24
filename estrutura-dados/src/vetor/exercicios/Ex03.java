@@ -1,6 +1,6 @@
 package exercicios;
 
-import vetor.VetorGenerico;
+import models.VetorGenerico;
 
 public class Ex03 {
 

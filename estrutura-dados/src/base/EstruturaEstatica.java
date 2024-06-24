@@ -1,19 +1,23 @@
-package vetor;
+package base;
 
-public class VetorObject {
+public class EstruturaEstatica<T> {
 
-    private Object[] elementos;
-    private int tamanhoReal;
+    protected T[] elementos;
+    protected int tamanhoReal;
 
-    public VetorObject(int capacidade) {
-        this.elementos = new Object[capacidade];
+    public EstruturaEstatica(int capacidade) {
+        this.elementos = (T[]) new Object[capacidade];
         this.tamanhoReal = 0;
     }
 
-    private void aumentarCapacidade() {
+    public EstruturaEstatica() {
+        this(10);
+    }
+
+    protected void aumentarCapacidade() {
 
         if (this.tamanhoReal == this.elementos.length) {
-            Object[] elementosNovos = new Object[this.elementos.length * 2];
+            T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
             for (int i = 0; i < this.elementos.length; i++) {
                 elementosNovos[i] = this.elementos[i];
             }
@@ -22,7 +26,7 @@ public class VetorObject {
 
     }
 
-    public void adicionarElemento(Object elemento) throws Exception {
+    protected void adicionarElemento(T elemento) throws Exception {
         aumentarCapacidade();
         if (this.tamanhoReal < this.elementos.length) {
             this.elementos[this.tamanhoReal] = elemento;
@@ -33,27 +37,7 @@ public class VetorObject {
 
     }
 
-    public Object buscarPorPosicao(int posicao) {
-
-        if (posicao >= 0 && posicao < this.tamanhoReal) {
-            return this.elementos[posicao];
-        } else {
-            throw new IllegalArgumentException("Erro: Índice inexistente.");
-        }
-
-    }
-
-    public int buscarPorElemento(Object elemento) {
-
-        for (int i = 0; i < this.tamanhoReal; i++) {
-            if (this.elementos[i].equals(elemento)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    public void adicionarElementoEmPosicao(Object elemento, int posicao) {
+    protected void adicionarElementoEmPosicao(T elemento, int posicao) {
         aumentarCapacidade();
         if (!(posicao >= 0 && posicao < this.tamanhoReal)) {
             throw new IllegalArgumentException("Erro: Índice inexistente.");
@@ -79,6 +63,13 @@ public class VetorObject {
 
     public int getTamanhoReal() {
         return this.tamanhoReal;
+    }
+
+    public Boolean estaVazia() {
+        if (this.tamanhoReal != 0) {
+            return false;
+        }
+        return true;
     }
 
     @Override

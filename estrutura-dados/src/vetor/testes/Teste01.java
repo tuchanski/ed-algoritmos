@@ -1,6 +1,6 @@
 package testes;
 
-import vetor.Vetor;
+import models.Vetor;
 
 public class Teste01 {
 

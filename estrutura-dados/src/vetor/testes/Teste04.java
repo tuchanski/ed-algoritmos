@@ -1,27 +1,27 @@
 package testes;
 
-import vetor.Vetor;
+import models.Vetor;
 
-public class Teste07 {
+public class Teste04 {
 
     public static void main(String[] args) {
 
-
         try {
 
-            Vetor vetor = new Vetor(3);
+            Vetor vetor = new Vetor(7);
 
             vetor.adicionarElemento(1);
             vetor.adicionarElemento(2);
             vetor.adicionarElemento(3);
-            vetor.adicionarElemento(4);
 
             System.out.println(vetor);
+
+            System.out.println(vetor.buscarPorPosicao(2));
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
+
     }
-    
+
 }

@@ -1,7 +1,6 @@
 package testes;
 
-import vetor.VetorGenerico;
-import vetor.VetorObject;
+import models.VetorGenerico;
 
 public class Teste11 {
 

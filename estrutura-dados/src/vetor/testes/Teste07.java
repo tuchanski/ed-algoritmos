@@ -1,8 +1,8 @@
 package testes;
 
-import vetor.Vetor;
+import models.Vetor;
 
-public class Teste08 {
+public class Teste07 {
 
     public static void main(String[] args) {
 
@@ -16,14 +16,11 @@ public class Teste08 {
             vetor.adicionarElemento(3);
             vetor.adicionarElemento(4);
 
-            vetor.removerElementoPorPosicao(2);
-
             System.out.println(vetor);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
         
     }
     

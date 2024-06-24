@@ -1,19 +1,19 @@
-package vetor;
+package models;
 
-public class Vetor {
+public class VetorObject {
 
-    private Integer[] elementos;
+    private Object[] elementos;
     private int tamanhoReal;
 
-    public Vetor(int capacidade) {
-        this.elementos = new Integer[capacidade];
+    public VetorObject(int capacidade) {
+        this.elementos = new Object[capacidade];
         this.tamanhoReal = 0;
     }
 
     private void aumentarCapacidade() {
 
         if (this.tamanhoReal == this.elementos.length) {
-            Integer[] elementosNovos = new Integer[this.elementos.length * 2];
+            Object[] elementosNovos = new Object[this.elementos.length * 2];
             for (int i = 0; i < this.elementos.length; i++) {
                 elementosNovos[i] = this.elementos[i];
             }
@@ -22,14 +22,10 @@ public class Vetor {
 
     }
 
-    // Por questões de eficiência, não é interessante iterar sobre cada elemento e
-    // verificar se está NULL.
-    // Portanto, utiliza-se uma variável para guardar o tamanho real do vetor.
-    public void adicionarElemento(int elemento) throws Exception {
+    public void adicionarElemento(Object elemento) throws Exception {
         aumentarCapacidade();
         if (this.tamanhoReal < this.elementos.length) {
             this.elementos[this.tamanhoReal] = elemento;
-            // System.out.printf("Elemento %d inserido com sucesso.\n", this.tamanhoReal);
             this.tamanhoReal += 1;
         } else {
             throw new Exception("Erro: Vetor cheio.");
@@ -37,7 +33,7 @@ public class Vetor {
 
     }
 
-    public Integer buscarPorPosicao(int posicao) {
+    public Object buscarPorPosicao(int posicao) {
 
         if (posicao >= 0 && posicao < this.tamanhoReal) {
             return this.elementos[posicao];
@@ -47,19 +43,17 @@ public class Vetor {
 
     }
 
-    public int buscarPorElemento(int elemento) {
+    public int buscarPorElemento(Object elemento) {
 
-        // Busca sequencial
         for (int i = 0; i < this.tamanhoReal; i++) {
-            if (this.elementos[i] == elemento) {
+            if (this.elementos[i].equals(elemento)) {
                 return i;
             }
         }
-        return -1; // Posição inexistente
-
+        return -1;
     }
 
-    public void adicionarElementoEmPosicao(int elemento, int posicao) {
+    public void adicionarElementoEmPosicao(Object elemento, int posicao) {
         aumentarCapacidade();
         if (!(posicao >= 0 && posicao < this.tamanhoReal)) {
             throw new IllegalArgumentException("Erro: Índice inexistente.");

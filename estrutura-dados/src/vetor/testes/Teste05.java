@@ -1,23 +1,23 @@
 package testes;
 
-import vetor.Vetor;
+import models.Vetor;
 
-public class Teste02 {
+public class Teste05 {
 
     public static void main(String[] args) {
-
         try {
 
-            Vetor vetor = new Vetor(2);
+            Vetor vetor = new Vetor(7);
 
             vetor.adicionarElemento(1);
             vetor.adicionarElemento(2);
             vetor.adicionarElemento(3);
 
+            System.out.println(vetor.buscarPorElemento(9));
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
 
 }

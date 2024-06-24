@@ -1,19 +1,19 @@
-package vetor;
+package models;
 
-public class VetorGenerico<T> {
+public class Vetor {
 
-    private T[] elementos;
+    private Integer[] elementos;
     private int tamanhoReal;
 
-    public VetorGenerico(int capacidade) {
-        this.elementos = (T[]) new Object[capacidade];
+    public Vetor(int capacidade) {
+        this.elementos = new Integer[capacidade];
         this.tamanhoReal = 0;
     }
 
     private void aumentarCapacidade() {
 
         if (this.tamanhoReal == this.elementos.length) {
-            T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
+            Integer[] elementosNovos = new Integer[this.elementos.length * 2];
             for (int i = 0; i < this.elementos.length; i++) {
                 elementosNovos[i] = this.elementos[i];
             }
@@ -22,34 +22,14 @@ public class VetorGenerico<T> {
 
     }
 
-    public Boolean contemElemento(T elemento) {
-
-        for (T elementoContido : this.elementos) {
-            if (elementoContido.equals(elemento)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public int ultimoIndice(T elemento) {
-
-        int indice = -1;
-        for (int i = 0; i < this.tamanhoReal; i++) {
-
-            if (this.elementos[i].equals(elemento)) {
-                indice = i;
-            }
-
-        }
-
-        return indice;
-    }
-
-    public void adicionarElemento(T elemento) throws Exception {
+    // Por questões de eficiência, não é interessante iterar sobre cada elemento e
+    // verificar se está NULL.
+    // Portanto, utiliza-se uma variável para guardar o tamanho real do vetor.
+    public void adicionarElemento(int elemento) throws Exception {
         aumentarCapacidade();
         if (this.tamanhoReal < this.elementos.length) {
             this.elementos[this.tamanhoReal] = elemento;
+            // System.out.printf("Elemento %d inserido com sucesso.\n", this.tamanhoReal);
             this.tamanhoReal += 1;
         } else {
             throw new Exception("Erro: Vetor cheio.");
@@ -57,7 +37,7 @@ public class VetorGenerico<T> {
 
     }
 
-    public T buscarPorPosicao(int posicao) {
+    public Integer buscarPorPosicao(int posicao) {
 
         if (posicao >= 0 && posicao < this.tamanhoReal) {
             return this.elementos[posicao];
@@ -67,17 +47,19 @@ public class VetorGenerico<T> {
 
     }
 
-    public int buscarPorElemento(T elemento) {
+    public int buscarPorElemento(int elemento) {
 
+        // Busca sequencial
         for (int i = 0; i < this.tamanhoReal; i++) {
-            if (this.elementos[i].equals(elemento)) {
+            if (this.elementos[i] == elemento) {
                 return i;
             }
         }
-        return -1;
+        return -1; // Posição inexistente
+
     }
 
-    public void adicionarElementoEmPosicao(T elemento, int posicao) {
+    public void adicionarElementoEmPosicao(int elemento, int posicao) {
         aumentarCapacidade();
         if (!(posicao >= 0 && posicao < this.tamanhoReal)) {
             throw new IllegalArgumentException("Erro: Índice inexistente.");
@@ -101,42 +83,8 @@ public class VetorGenerico<T> {
         this.tamanhoReal -= 1;
     }
 
-    public void removerElemento(T elemento) {
-
-        int indice = buscarPorElemento(elemento);
-
-        if (indice == -1) {
-            throw new IllegalArgumentException("Erro: Elemento inexistente no vetor.");
-        } else {
-            for (int i = indice; i < this.tamanhoReal - 1; i++) {
-                this.elementos[i] = this.elementos[i + 1];
-            }
-            this.tamanhoReal -= 1;
-        }
-    }
-
     public int getTamanhoReal() {
         return this.tamanhoReal;
-    }
-
-    public T obtem(int posicao) {
-
-        if (!(posicao >= 0 && posicao < this.tamanhoReal)) {
-            throw new IllegalArgumentException("Erro: Índice inexistente.");
-        }
-
-        T elemento;
-        elemento = this.elementos[posicao];
-        return elemento;
-
-    }
-
-    public void limpar() {
-
-        T[] listaLimpa = (T[]) new Object[this.elementos.length]; // Preserva capacidade
-        this.elementos = listaLimpa;
-        this.tamanhoReal = 0;
-
     }
 
     @Override

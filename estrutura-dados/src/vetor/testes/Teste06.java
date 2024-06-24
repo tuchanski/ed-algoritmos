@@ -1,17 +1,21 @@
 package testes;
 
-import vetor.Vetor;
+import models.Vetor;
 
-public class Teste03 {
+public class Teste06 {
 
     public static void main(String[] args) {
 
         try {
 
-            Vetor vetor = new Vetor(7);
+            Vetor vetor = new Vetor(10);
 
             vetor.adicionarElemento(1);
             vetor.adicionarElemento(2);
+            vetor.adicionarElemento(3);
+            vetor.adicionarElemento(4);
+
+            vetor.adicionarElementoEmPosicao(7, 3);
 
             System.out.println(vetor);
 
@@ -19,6 +23,7 @@ public class Teste03 {
             System.out.println(e.getMessage());
         }
 
+        
     }
 
 }
