@@ -23,6 +23,8 @@ public class Teste12 {
 
         System.out.println(arrayList.get(2));
 
+        System.out.println(arrayList.lastIndexOf("c"));
+
     }
 
 }

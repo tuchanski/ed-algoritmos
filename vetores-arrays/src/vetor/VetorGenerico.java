@@ -32,6 +32,20 @@ public class VetorGenerico<T> {
         return false;
     }
 
+    public int ultimoIndice(T elemento) {
+
+        int indice = -1;
+        for (int i = 0; i < this.tamanhoReal; i++) {
+
+            if (this.elementos[i].equals(elemento)) {
+                indice = i;
+            }
+
+        }
+
+        return indice;
+    }
+
     public void adicionarElemento(T elemento) throws Exception {
         aumentarCapacidade();
         if (this.tamanhoReal < this.elementos.length) {
@@ -87,8 +101,42 @@ public class VetorGenerico<T> {
         this.tamanhoReal -= 1;
     }
 
+    public void removerElemento(T elemento) {
+
+        int indice = buscarPorElemento(elemento);
+
+        if (indice == -1) {
+            throw new IllegalArgumentException("Erro: Elemento inexistente no vetor.");
+        } else {
+            for (int i = indice; i < this.tamanhoReal - 1; i++) {
+                this.elementos[i] = this.elementos[i + 1];
+            }
+            this.tamanhoReal -= 1;
+        }
+    }
+
     public int getTamanhoReal() {
         return this.tamanhoReal;
+    }
+
+    public T obtem(int posicao) {
+
+        if (!(posicao >= 0 && posicao < this.tamanhoReal)) {
+            throw new IllegalArgumentException("Erro: Índice inexistente.");
+        }
+
+        T elemento;
+        elemento = this.elementos[posicao];
+        return elemento;
+
+    }
+
+    public void limpar() {
+
+        T[] listaLimpa = (T[]) new Object[this.elementos.length]; // Preserva capacidade
+        this.elementos = listaLimpa;
+        this.tamanhoReal = 0;
+
     }
 
     @Override

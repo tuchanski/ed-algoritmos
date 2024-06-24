@@ -2,11 +2,11 @@ package exercicios;
 
 import vetor.VetorGenerico;
 
-public class Ex01 {
+public class Ex02 {
     public static void main(String[] args) {
 
-        // 1) Melhore a classe VetorGenerico e implemente o método "contém"
-        // semelhante ao método contains da classe ArrayList
+        // 1) Melhore a classe VetorGenerico e implemente o método ultimoIndice
+        // semelhante ao método lastIndexOf da classe ArrayList
 
         VetorGenerico<String> vetor = new VetorGenerico<>(3);
 
@@ -14,9 +14,11 @@ public class Ex01 {
             vetor.adicionarElemento("Gato");
             vetor.adicionarElemento("Cachorro");
             vetor.adicionarElemento("Bezerro");
+            vetor.adicionarElemento("Gato");
 
-            System.out.println(vetor.contemElemento("Gato")); // true
-            System.out.println(vetor.contemElemento("Galinha")); // false
+            System.out.println(vetor.ultimoIndice("Gato")); // retorna 3
+            System.out.println(vetor.ultimoIndice("Peixe")); // retorna -1
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
