@@ -15,6 +15,10 @@ public class Teste02 {
         System.out.println(listaEncadeada);
         System.out.println(listaEncadeada.getTamanho());
 
+        listaEncadeada.limparLista();
+
+        System.out.println(listaEncadeada);
+
     }
 
 }
