@@ -3,14 +3,8 @@
 
 Este repositório contém materiais e implementações focados no estudo de **estruturas de dados** e **algoritmos**. Ele está organizado em duas pastas principais, cada uma dedicada a um tópico específico.
 
-## Fontes
-
-Para os estudos que guardo nesse repositório, as fontes mais utilizadas são:
-
-- [Loiane Groner](https://www.youtube.com/@loianegroner)
-- [Programação Dinâmica](https://www.youtube.com/@pgdinamica)
-- [Leguarino](https://www.youtube.com/@leguarino)
-- [Entendendo Algoritmos: Um Guia Ilustrado Para Programadores e Outros Curiosos](https://www.amazon.com.br/Entendendo-Algoritmos-Ilustrado-Programadores-Curiosos/dp/8575225634)
+## Tecnologia
+- Java 21
 
 ## Estrutura de Diretórios
 
@@ -43,6 +37,15 @@ Aqui você encontrará implementações de algoritmos clássicos, como:
 - Insertion Sort
 - Selection Sort
 - (...)
+
+## Fontes
+
+Para os estudos que guardo nesse repositório, as fontes mais utilizadas são:
+
+- [Loiane Groner](https://www.youtube.com/@loianegroner)
+- [Programação Dinâmica](https://www.youtube.com/@pgdinamica)
+- [Leguarino](https://www.youtube.com/@leguarino)
+- [Entendendo Algoritmos: Um Guia Ilustrado Para Programadores e Outros Curiosos](https://www.amazon.com.br/Entendendo-Algoritmos-Ilustrado-Programadores-Curiosos/dp/8575225634)
 
 ## Autor
 
