@@ -1,5 +1,5 @@
 
-# Estudos de Estruturas de Dados e Algoritmos
+# Estruturas de Dados e Algoritmos 💻🤔
 
 Este repositório contém materiais e implementações focados no estudo de **estruturas de dados** e **algoritmos**. Ele está organizado em duas pastas principais, cada uma dedicada a um tópico específico.
 
